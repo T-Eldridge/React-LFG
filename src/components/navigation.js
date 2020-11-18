@@ -54,10 +54,10 @@ const Navigation = (props) => {
                     </ul>
                 </Toolbar>
             </AppBar>
-            <Typography color="text-pimary">
+            <Typography color="textPrimary">
                 {cookies.loggedIn && (
                     <span>
-                        Welcome <span style={{ color: "blue" }}>{props.user}</span>!
+                        Welcome <span style={{ color: "black" }}>{props.user.username}</span>!
                     </span>
                 )}
             </Typography>
