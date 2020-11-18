@@ -22,7 +22,7 @@ const Navigation = (props) => {
                         </Typography>
                         <ul className="nav-list">
                             <li className="nav-list-item">
-                                <Link to="/">Games</Link>
+                                <Link to="/games">Games</Link>
                             </li>
                             <li className="nav-list-item">
                                 {document.cookie === "loggedIn=true" && (

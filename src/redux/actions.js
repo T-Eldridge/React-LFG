@@ -1,14 +1,13 @@
-export const getGames = (games) => {
+const url = "https://api.rawg.io/api/games"
+
+export const fetchGames = (games) => {
     return async (dispatch) => {
-        fetch(
-            `https://api.rawg.io/api/games`
-        )
-        .then((res) => res.json())
-        .then((response) => {
-            games = response.results.name;
-            const action = {
+        fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+                const action = {
                 type: "GET_GAMES",
-                value: games,
+                value: data.results,
             };
             dispatch(action)
         })
@@ -28,5 +27,12 @@ export  const setUser = (username) => {
     return {
         type: "SET_USER",
         value: username,
+    }
+}
+
+export const removeEntry = (index) => {
+    return {
+        type: 'REMOVE_ENTRY',
+        value: index,
     }
 }

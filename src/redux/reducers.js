@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+const user = (state = null) => state
+
 const loggedIn = (state = [], action) => {
   switch (action.type) {
     case "LOGIN":
@@ -9,13 +11,18 @@ const loggedIn = (state = [], action) => {
   }
 };
 
-const user = (state = "", action) => {
-  switch (action.type) {
-    case "SET_USER":
-      return action.value;
+const games = (state = [], action) => {
+  switch(action.type) {
+    case "ADD_GAME":
+      return [ ...state, action.value ]
+    case "REMOVE_GAME":
+      const games = [ ...state ]
+      games.splice(action.value, 1)
+      return games
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default combineReducers({ loggedIn, user });
+
+export default combineReducers({ loggedIn, user, games });
