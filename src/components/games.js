@@ -3,7 +3,7 @@ import { Container, Paper, Chip } from '@material-ui/core';
 
 const Game = (props) => {
     const id = props.match.params.id
-    const game = props.game.find (g => g.id == id)
+    const game = props.games.find (g => g.id == id)
 
     return (
         <Container maxWidth="sm" className="game-container">

@@ -1,7 +1,7 @@
 const url = "https://api.rawg.io/api/games"
 
-export const fetchGames = (games) => {
-    return async (dispatch) => {
+export const fetchGames = () => {
+    return (dispatch) => {
         fetch(url)
         .then((response) => response.json())
         .then((data) => {

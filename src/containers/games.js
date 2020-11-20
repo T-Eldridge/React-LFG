@@ -3,7 +3,7 @@ import Game from '../components/games'
 
 const mapStateToProps = (state) => {
     return {
-        games: state.game
+        games: state.games
     }
 }
 
