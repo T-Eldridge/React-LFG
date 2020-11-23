@@ -21,10 +21,7 @@ const Navigation = (props) => {
                         Looking For Game
                         </Typography>
                         <ul className="nav-list">
-                            <li className="nav-list-item">
-                                <Link to="/games">Games</Link>
-                            </li>
-                            <li className="nav-list-item">
+                               <li className="nav-list-item">
                                 {document.cookie === "loggedIn=true" && (
                                 <div>
                                     <Button
@@ -56,9 +53,8 @@ const Navigation = (props) => {
             </AppBar>
             <Typography color="textPrimary">
                 {cookies.loggedIn && (
-                    <span>
-                        Welcome <span style={{ color: "black" }}>{props.user.username}</span>!
-                    </span>
+                    <h4>Welcome{props.user.username}!</h4>
+                    
                 )}
             </Typography>
         </div>

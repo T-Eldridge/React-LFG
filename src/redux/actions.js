@@ -6,7 +6,7 @@ export const fetchGames = () => {
         .then((response) => response.json())
         .then((data) => {
                 const action = {
-                type: "GET_GAMES",
+                type: 'GET_GAMES',
                 value: data.results,
             };
             dispatch(action)
@@ -18,14 +18,14 @@ export const fetchGames = () => {
 
 export const login = (bool) => {
     return {
-        type: "LOGIN",
+        type: 'LOGIN',
         value: bool,
     }
 }
 
 export  const setUser = (username) => {
     return {
-        type: "SET_USER",
+        type: 'SET_USER',
         value: username,
     }
 }
