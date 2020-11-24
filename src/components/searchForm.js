@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchBar from '../containers/searchBar'
 import { Button } from '@material-ui/core';
-import Game from './games'
+
 
 
 class App extends Component {
@@ -43,7 +43,6 @@ class App extends Component {
                 <div>
                     <SearchBar results={this.state.results} filterChange={this.onSearchChange} />
                     <Button onClick={this.consol}>Find Game</Button>
-                    <Game results name={filterOnName} />
                 </div>
             )
         }
