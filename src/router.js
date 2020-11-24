@@ -8,7 +8,7 @@ import searchForm from "./components/searchForm"
 const Router = () => {
     return (
         <Switch>
-            <Route exact path= "/searchForm" component={searchForm} />
+            <Route exact path= "/" component={searchForm} />
             <Route  path= "/login" component ={Login} />
             <Route  path="/games/:id" component ={Game}/>
             

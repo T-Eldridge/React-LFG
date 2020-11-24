@@ -1,52 +1,53 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SearchBar from '../containers/searchBar'
-import { Button } from '@material-ui/core';
+const axios = require("axios");
+const dotenv = require('dotenv')
+dotenv.config()
+const api_key = process.env.API_KEY
+
 
 
 
 class App extends Component {
     state = {
         results: [],
-        searchfield: ''
+        input: "",
     }
 
     consol = () => {
         console.log(this.state.results)
     }
- 
-    getGames = () => {
-        return axios.get('https://api.rawg.io/api/games')
+
+    onChange = (e) => {
+        this.setState({ input: e.target.value });
+    };
+    
+    getGames = (e) => {
+        e.preventDefault();
+        axios(`https://api.rawg.io/api/games?api_key=${api_key}&search=` + this.state.input)
         .then(res => {
             const results = res.data.results
             this.setState({ results: [...results]})
+            console.log(results)
         })
     }
-
-    componentDidMount() {
-        this.getGames()
-    }
-
-    onSearchChange = (e) => {
-        this.setState({ searchfield: e.target.value })
-    }
-
     render() {
-        const filterOnName = this.state.results.filter(results => {
-            return results.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
-        })
-        
-        if (this.state.results.length === 0) {
-            return <h1>Loading...</h1>
-        } else {
-            return (
-                <div>
-                    <SearchBar results={this.state.results} filterChange={this.onSearchChange} />
-                    <Button onClick={this.consol}>Find Game</Button>
-                </div>
-            )
-        }
+        return (
+            <form onSubmit={this.getGames}>
+                <input onChange={this.onChange}></input>
+                <button type="submit">Find Game</button>
+                {this.state.results.map((results) => {
+                    return (
+                        <p>
+                            {" "}
+                            <a href={results.background_image}>{results.name}</a>
+                        </p>
+                    )
+                })}
+            </form>
+        )
     }
+
+
 }
 
 export default App;
