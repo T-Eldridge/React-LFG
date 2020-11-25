@@ -39,7 +39,11 @@ class App extends Component {
                     return (
                         <p>
                             {" "}
-                            <a href={results.background_image}>{results.name}</a>
+                            <h2>{results.name}</h2>
+                            <ul>
+                                <h4>Game Rating:{results.rating}</h4>
+                                <h4>Date Released:{results.released}</h4>
+                            </ul>
                         </p>
                     )
                 })}
