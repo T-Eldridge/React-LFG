@@ -47,7 +47,7 @@ class App extends Component {
     };
 
     componentDidUpdate() {
-        if (this.props.userName !== "") {
+        if (this.props.userName) {
             document.cookie = "loggedIn=true;max-age=600*1000";
       this.setState({ redirect: true }); //leave this alone.
     } else {
@@ -69,7 +69,8 @@ class App extends Component {
                         value={this.state.userName}
                         name="userName"
                         label="Username"
-                        type="text" />
+                        type="text" 
+                        />
 
                         <TextField
                         required
@@ -77,7 +78,8 @@ class App extends Component {
                         value={this.state.userPassword}
                         name="userPassword"
                         label="Password"
-                        type="password" />
+                        type="password" 
+                        />
 
                         <Button
                         type="submit"
@@ -87,8 +89,6 @@ class App extends Component {
                             Login
                         </Button>
                         <br />
-                    </form>
-                    <div>
                         <Button
                             variant="contained"
                             className="add-user"
@@ -96,6 +96,8 @@ class App extends Component {
                         >
                             Sign Up!
                         </Button>
+                    </form>
+                    <div>
                         <Dialog open={this.state.open} onClose={this.toggleDialog}>
                             <DialogTitle>Join The Dork Side!</DialogTitle>
                             <DialogContent>
@@ -128,7 +130,10 @@ class App extends Component {
                                     required
                                     />
                                     <br />
-                                    <Button variant="contained" color="secondary" type="submit">
+                                    <Button 
+                                    variant="contained" 
+                                    color="secondary" 
+                                    type="submit">
                                         Submit!
                                     </Button>
                                     </form>
