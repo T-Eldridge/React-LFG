@@ -1,23 +1,3 @@
-import { findAllByDisplayValue } from "@testing-library/react";
-
-const url = "https://api.rawg.io/api/games"
-
-export const fetchGames = () => {
-    return (dispatch) => {
-        fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-                const action = {
-                type: 'GET_GAMES',
-                value: data.results,
-            };
-            dispatch(action)
-        })
-    }
-}
-
-
-
 export const loginUser = (User) => {
     return function (dispatch) {
         fetch("/auth/login", {

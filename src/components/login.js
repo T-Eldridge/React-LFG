@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import { 
     TextField, 
     Button, 
@@ -19,8 +19,9 @@ class App extends Component {
     toggleDialog = () => this.setState({ open: !this.state.open});
 
     handleTextChange = (e) => {
-        this.setState({ userName: e.target.value });
-        this.setState({ userPassword: e.target.value });
+      const state = { ...this.state };
+      state[e.target.name] = e.target.value;
+      this.setState(state)
     };
 
     login = (e) => {
@@ -65,7 +66,7 @@ class App extends Component {
                         <TextField
                         required
                         onChange={this.handleTextChange}
-                        value={this.state.username}
+                        value={this.state.userName}
                         name="userName"
                         label="Username"
                         type="text" />
