@@ -16,6 +16,7 @@ const Navigation = (props) => {
                 <AppBar position="relative">
                     <Toolbar>
                         <IconButton color="default">
+
                         </IconButton>
                         <Typography variant="h3" style={{flexGrow: "1"}}>
                         Looking For Game
