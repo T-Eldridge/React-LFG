@@ -1,12 +1,15 @@
 .nav-image {
   text-align: center;
   justify-content: center;
-  background-image: url(./images/Most-Common-Video-Game-Design-Questions.jpg);
-  background-position: left;
-  width: 100%;
+  background-image: url(./images/video-games-concept-gamepad-controls-260nw-1792571971.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
   height: 160px;
   
 }
+
 .login-form {
   justify-content: center;
   min-height: 100px;

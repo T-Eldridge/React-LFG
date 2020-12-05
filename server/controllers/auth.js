@@ -26,7 +26,7 @@ const signup = (req, res) => {
 
 const login = (req, res) => {
   const { userName, userPassword } = req.body
-  let sql = "SELECT * FROM lfgusers.users WHERE username = ?"
+  let sql = "SELECT * FROM users WHERE username = ?"
   sql = mysql.format(sql, [ userName ])
 
   pool.query(sql, (err, rows) => {

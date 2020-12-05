@@ -13,13 +13,13 @@ const Navigation = (props) => {
     const cookies = cookie.parse(document.cookie);
         return (
             <div>
-                <AppBar  className="nav-image" position="relative">
+                <AppBar  className="nav-image" position="relative" >
                     <Toolbar>
                         <IconButton color="secondary">
 
                         </IconButton>
-                        <Typography variant= "h3" style={{flexGrow: "1"}} color="#000">
-                        Looking For Games
+                        <Typography variant= "h3" style={{flexGrow: "1"}} color="crimson">
+                        
                         </Typography>
                         <ul>
                             <li>
