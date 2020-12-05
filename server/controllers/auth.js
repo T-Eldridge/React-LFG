@@ -33,13 +33,13 @@ const login = (req, res) => {
     if (err) return handleSQLError(res, err)
     if (!rows.length) return res.status(404).send('No matching users')
 
-    const hash = rows[0].userPassword
+    const hash = rows[0].userpassword
     bcrypt.compare(userPassword, hash)
       .then(result => {
         if (!result) return res.status(400).send('Invalid password')
 
         const data = { ...rows[0] }
-        data.userPassword = 'REDACTED'
+        data.userpassword = 'REDACTED'
 
         const token = jwt.sign(data, 'secret')
         res.json({
