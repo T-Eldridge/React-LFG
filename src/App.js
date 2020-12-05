@@ -9,7 +9,8 @@ import Navigation from './containers/navigation'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+  
       <Provider store={store}>
         <BrowserRouter>
         <Navigation /> 

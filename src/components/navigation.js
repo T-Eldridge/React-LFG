@@ -13,16 +13,19 @@ const Navigation = (props) => {
     const cookies = cookie.parse(document.cookie);
         return (
             <div>
-                <AppBar position="relative">
+                <AppBar  className="nav-image" position="relative">
                     <Toolbar>
-                        <IconButton color="default">
+                        <IconButton color="secondary">
 
                         </IconButton>
-                        <Typography variant="h3" style={{flexGrow: "1"}}>
-                        Looking For Game
+                        <Typography variant= "h3" style={{flexGrow: "1"}} color="#000">
+                        Looking For Games
                         </Typography>
-                        <ul className="nav-list">
-                               <li className="nav-list-item">
+                        <ul>
+                            <li>
+                                <Link to= "/search">Search</Link>
+                            </li>
+                               <li>
                                 {document.cookie === "loggedIn=true" && (
                                 <div>
                                     <Button
@@ -36,7 +39,7 @@ const Navigation = (props) => {
                                 </div>
                              )}
                             </li>
-                            <li className="nav-list-item">
+                            <li>
                                 {document.cookie !== "loggedIn=true" && (
                                     <Button
                                     onClick={() => {

@@ -32,6 +32,7 @@ class App extends Component {
     }
     render() {
         return (
+            <div>
             <form onSubmit={this.getGames}>
                 <input onChange={this.onChange}></input>
                 <button type="submit">Find Game</button>
@@ -41,6 +42,12 @@ class App extends Component {
                             {" "}
                             <h2>{results.name}</h2>
                             <ul>
+                                <img 
+                                src={results.background_image} 
+                                alt="game art"
+                                width="250"
+                                height="250">
+                                </img>
                                 <h4>Game Rating:{results.rating}</h4>
                                 <h4>Date Released:{results.released}</h4>
                             </ul>
@@ -48,6 +55,7 @@ class App extends Component {
                     )
                 })}
             </form>
+            </div>
         )
     }
 

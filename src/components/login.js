@@ -59,9 +59,9 @@ class App extends Component {
             return <Redirect to="/" />
         }
         return (
-            <div className="App">
-                <Container maxWidth="sm">
-                    <h1>Please Enter Login Information</h1>
+                <div>
+            <Container maxWidth="sm">
+                    <h3>Please Enter Login Information</h3>
                     <form className="login-form" onSubmit={this.login}>
                         <TextField
                         required
@@ -141,7 +141,7 @@ class App extends Component {
                         </Dialog>
                     </div>
                 </Container>
-            </div>
+                </div>
         );
     }
 }
