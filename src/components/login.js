@@ -47,9 +47,9 @@ class App extends Component {
     };
 
     componentDidUpdate() {
-        if (this.props.userName) {
+        if (this.props.user.userName) {
             document.cookie = "loggedIn=true;max-age=600*1000";
-      this.setState({ redirect: true }); //leave this alone.
+            this.setState({ redirect: true }); //leave this alone.
     } else {
     }
     }
