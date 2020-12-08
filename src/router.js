@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import Login from "./containers/login";
+import cookie from "cookie";
 import searchForm from "./components/searchForm"
 import Dashboard from './components/dasboard';
 
-const checkAuth = (cookie) => {
+const checkAuth = () => {
     const cookies = cookie.parse(document.cookie);
     return cookies["loggedIn"] ? true : false;
 }

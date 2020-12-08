@@ -6,13 +6,14 @@ import {
     TableCell,
     TableBody,
  } from '@material-ui/core';
+ import searchForm from "../components/searchForm"
 
 
 
 class Dashboard extends Component {
     componentDidMount() {
         // if mounts display favorite games
-        this.props.getUserFavorites(this.props.favorites) 
+        // this.props.getUserFavorites(this.props.favorites) 
     }
 
     render() {
@@ -21,8 +22,9 @@ class Dashboard extends Component {
                 <div>
                     <Table>
                         <TableHead>
-                           <h1>${this.props.user.username}Favorite Games</h1> 
+                           <h1> {this.props.userName}Favorite Games</h1> 
                         </TableHead>
+                         <searchForm />
                         <TableBody>
                             <TableCell>
                                 <TableRow align="left">
