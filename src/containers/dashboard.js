@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Dashboard from '../components/dasboard'
+import { getUserFavorites } from "../redux/actions"
 // import add and remove favorites 
 
 const mapStateToProps = (state) => {

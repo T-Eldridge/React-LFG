@@ -6,12 +6,13 @@ import {
     TableCell,
     TableBody,
  } from '@material-ui/core';
-import { Link }  from 'react-router-dom'
-import { render } from '@testing-library/react';
+
+
 
 class Dashboard extends Component {
     componentDidMount() {
-        // if mounts display favorite games 
+        // if mounts display favorite games
+        this.props.getUserFavorites(this.props.favorites) 
     }
 
     render() {
@@ -20,13 +21,16 @@ class Dashboard extends Component {
                 <div>
                     <Table>
                         <TableHead>
-                           <h1>Favorite Games</h1> 
+                           <h1>${this.props.user.username}Favorite Games</h1> 
                         </TableHead>
                         <TableBody>
                             <TableCell>
                                 <TableRow align="left">
                                     <p style={{ paddingLeft: 60 }}>
-                                        {/* display statement for favorites */}
+                                       <b>Favorite Games</b>{" "}
+                                       <b style={{ align: "right "}}>
+                                           :${this.props.favorites}
+                                       </b>
                                     </p>
                                 </TableRow>
                             </TableCell>

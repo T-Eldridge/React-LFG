@@ -59,6 +59,18 @@ export const userAdded = (data) => {
     };
 };
 
+export const getUserFavorites = (User) => {
+    return function (dispatch) {
+        fetch(`/favorites/${User.favorites}`, {
+            method: "GET",
+            headers: {
+                "authorization": `${User.token}`,
+                "Content-Type": "applicaton/json"
+            }
+        })
+    }
+}
+
 export const removeEntry = (index) => {
     return {
         type: 'REMOVE_ENTRY',

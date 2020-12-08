@@ -13,14 +13,6 @@ const user = (state = {}, action) => {
   }
 }
 
-const loggedIn = (state = [], action) => {
-  switch (action.type) {
-    case 'LOGIN':
-      return (state = action.value);
-    default:
-      return state;
-  }
-};
 
 const favorites = (state = [], action) => {
   switch(action.type) {
@@ -36,4 +28,4 @@ const favorites = (state = [], action) => {
 }
 
 
-export default combineReducers({ loggedIn, user, favorites });
+export default combineReducers({user, favorites });
