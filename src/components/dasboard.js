@@ -36,19 +36,12 @@ class Dashboard extends Component {
                 <div>
                     <Table>
                         <TableHead>
-                           <h1> {this.props.userName}Favorite Games</h1> 
+                            <TableRow align="left">
+                            <TableCell> Favorite Games: </TableCell>
+                            </TableRow>
+                         
                         </TableHead>
                         <TableBody>
-                            <TableCell>
-                                <TableRow align="left">
-                                    <p style={{ paddingLeft: 60 }}>
-                                       <b>Favorite Games</b>{" "}
-                                       <b style={{ align: "right "}}>
-                                           :{this.props.favorites}
-                                       </b>
-                                    </p>
-                                </TableRow>
-                            </TableCell>
                         </TableBody>
                     </Table>
                     <App />

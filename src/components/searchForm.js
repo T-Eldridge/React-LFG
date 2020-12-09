@@ -35,7 +35,7 @@ class App extends Component {
 
     // conditionally render add favs button when logged in
         render() {
-            if(this.props.userName) {
+            if(this.props.userName !=="") {
                 return (
                     <div>
                      <form onSubmit={this.getGames}>
@@ -43,7 +43,7 @@ class App extends Component {
                 <button type="submit">Find Game</button>
                 {this.state.results.map((results) => {
                     return (
-                        <p>
+                        <div>
                             {" "}
                             <h2>{results.name}</h2>
                             <Button onSubmit={this.addFav}>Favorite</Button>
@@ -57,7 +57,7 @@ class App extends Component {
                                 <h4>Game Rating:{results.rating}</h4>
                                 <h4>Date Released:{results.released}</h4>
                             </ul>
-                        </p>
+                        </div>
                     )
                 })}
             </form>
