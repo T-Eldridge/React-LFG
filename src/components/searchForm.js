@@ -63,7 +63,7 @@ class App extends Component {
                     </form>
                     </div>
                 )
-            }
+            } else {
             return (
             <div>
             <form onSubmit={this.getGames}>
@@ -89,7 +89,9 @@ class App extends Component {
                 })}
             </form>
             </div>
-        )
+            
+            )
+        }
     }
 
 
