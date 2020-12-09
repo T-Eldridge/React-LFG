@@ -13,7 +13,7 @@ import {
 
 class Dashboard extends Component {
     state = {
-        open: false,
+        // open: false,
         favorites: ""
     }
 

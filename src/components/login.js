@@ -14,6 +14,7 @@ class App extends Component {
         userName: "",
         userPassword: "",
         redirect: false,
+        open: false,
     };
     
     toggleDialog = () => this.setState({ open: !this.state.open});
