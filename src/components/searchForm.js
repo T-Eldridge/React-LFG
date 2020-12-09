@@ -38,10 +38,10 @@ class App extends Component {
             if(this.props.userName !=="") {
                 return (
                     <div>
-                     <form onSubmit={this.getGames}>
-                <input onChange={this.onChange}></input>
-                <button type="submit">Find Game</button>
-                {this.state.results.map((results) => {
+                    <form onSubmit={this.getGames}>
+                        <input onChange={this.onChange}></input>
+                        <button type="submit">Find Game</button>
+                        {this.state.results.map((results) => {
                     return (
                         <div>
                             {" "}
@@ -60,7 +60,7 @@ class App extends Component {
                         </div>
                     )
                 })}
-            </form>
+                    </form>
                     </div>
                 )
             }
