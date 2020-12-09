@@ -69,7 +69,7 @@ export const logoutUser = (User) => {
 
 export const getUserFavorites = (User) => {
     return function (dispatch) {
-        fetch(`/favorites/${User.favorites}`, {
+        fetch(`favorites/${User.favorites}`, {
             method: "GET",
             headers: {
                 "authorization": `${User.token}`,

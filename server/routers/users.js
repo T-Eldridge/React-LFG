@@ -7,6 +7,11 @@ router.get("/", authenticate, usersController.getAllUsers);
 
 router.get("/:id", authenticate, usersController.getUserById);
 
+router.get('/logout', function (req, res) {
+  res.clearCookie('connect.sid');
+  res.redirect('/')
+})
+
 router.post("/", authenticate, usersController.createUser);
 
 router.put("/:id", authenticate, usersController.updateUserById);

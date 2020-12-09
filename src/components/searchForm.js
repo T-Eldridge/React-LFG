@@ -1,3 +1,4 @@
+import cookie from "cookie"
 import React, { Component } from 'react';
 import { Button } from "@material-ui/core";
 const axios = require("axios");
@@ -23,6 +24,11 @@ class App extends Component {
         this.setState({ input: e.target.value });
     };
     
+    checkAuth = () => {
+    const cookies = cookie.parse(document.cookie);
+    return cookies["loggedIn"] ? true : false;
+}
+
     getGames = (e) => {
         e.preventDefault();
         axios(`https://api.rawg.io/api/games?api_key=${api_key}&search=` + this.state.input)
@@ -46,7 +52,7 @@ class App extends Component {
                         <div>
                             {" "}
                             <h2>{results.name}</h2>
-                            <Button onSubmit={this.addFav}>Favorite</Button>
+                            <Button onSubmit={this.addFav} color="secondary" variant="contained">Favorite</Button>
                             <ul>
                                 <img 
                                 src={results.background_image} 
@@ -63,7 +69,7 @@ class App extends Component {
                     </form>
                     </div>
                 )
-            } else {
+            } else if (!this.props.userName) {
             return (
             <div>
             <form onSubmit={this.getGames}>
