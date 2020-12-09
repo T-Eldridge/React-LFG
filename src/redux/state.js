@@ -1,8 +1,5 @@
 export default {
-    user: {
-         userName: "",
-         userPassword: "",
-        },
-        favorites: []
-    
-}
+  userName: "",
+  userPassword: "",
+  favorites: [],
+};

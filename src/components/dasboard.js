@@ -13,7 +13,7 @@ import {
 
 class Dashboard extends Component {
     state = {
-        // open: false,
+       
         favorites: ""
     }
 
@@ -37,7 +37,7 @@ class Dashboard extends Component {
                     <Table>
                         <TableHead>
                             <TableRow align="left">
-                            <TableCell> Favorite Games: </TableCell>
+                            <TableCell> {this.props.userName} Favorite Games: </TableCell>
                             </TableRow>
                          
                         </TableHead>

@@ -1,17 +1,17 @@
 import { connect } from "react-redux";
 import HandleLogin from "../components/handlelogin";
-import { logoutUser } from "../redux/actions";
+import { setUser } from "../redux/actions";
 
 const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-    };
+  return {
+    userName: state.userName,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        logoutUser: (user) => dispatch(logoutUser(user)),
-    };
+  return {
+    setUser: (user) => dispatch(setUser(user)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HandleLogin);

@@ -1,31 +1,36 @@
 import { combineReducers } from "redux";
 
-const user = (state = {}, action) => {
+const userName = (state = "", action) => {
   switch (action.type) {
-    case "LOGIN":
+    case "USER":
       return action.value;
     case "LOGOUT":
-      return action.value;
-    case "ADD_USER":
       return action.value;
     default:
       return state;
   }
-}
+};
 
+const userPassword = (state = "", action) => {
+  switch (action.type) {
+    case "PASSWORD":
+      return action.value;
+    default:
+      return state;
+  }
+};
 
 const favorites = (state = [], action) => {
-  switch(action.type) {
-    case 'ADD_FAVORITE':
+  switch (action.type) {
+    case "ADD_FAVORITE":
       return [...state, action.value];
-    case 'REMOVE_FAVORITE':
-      const favorites = [ ...state ]
-      favorites.splice(action.value, 1)
-      return favorites
+    case "REMOVE_FAVORITE":
+      const favorites = [...state];
+      favorites.splice(action.value, 1);
+      return favorites;
     default:
-      return state
+      return state;
   }
-}
+};
 
-
-export default combineReducers({user, favorites });
+export default combineReducers({ userName, userPassword, favorites });
