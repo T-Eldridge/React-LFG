@@ -1,4 +1,4 @@
-import cookie from "cookie"
+
 import React, { Component } from 'react';
 import { Button } from "@material-ui/core";
 const axios = require("axios");
@@ -8,10 +8,9 @@ const api_key = process.env.API_KEY
 
 
 
-
 class App extends Component {
     state = {
-        userName: "",
+        userName: false,
         results: [],
         input: "",
     }
@@ -24,10 +23,7 @@ class App extends Component {
         this.setState({ input: e.target.value });
     };
     
-    checkAuth = () => {
-    const cookies = cookie.parse(document.cookie);
-    return cookies["loggedIn"] ? true : false;
-}
+    
 
     getGames = (e) => {
         e.preventDefault();
@@ -39,9 +35,11 @@ class App extends Component {
         })
     }
 
+    
+
     // conditionally render add favs button when logged in
         render() {
-            if(this.props.userName !=="") {
+            if(this.props.userName) {
                 return (
                     <div>
                     <form onSubmit={this.getGames}>
