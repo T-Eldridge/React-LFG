@@ -16,9 +16,9 @@ const user = (state = {}, action) => {
 
 const favorites = (state = [], action) => {
   switch(action.type) {
-    case 'ADD_GAME':
-      return action.value
-    case 'REMOVE_GAME':
+    case 'ADD_FAVORITE':
+      return [...state, action.value];
+    case 'REMOVE_FAVORITE':
       const favorites = [ ...state ]
       favorites.splice(action.value, 1)
       return favorites

@@ -58,6 +58,14 @@ export const userAdded = (data) => {
         value: data,
     };
 };
+                        
+export const logoutUser = (User) => {
+  document.cookie = "loggedIn=false; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    return {
+       type: "LOGOUT",
+        value: User, 
+    };
+};
 
 export const getUserFavorites = (User) => {
     return function (dispatch) {
@@ -65,23 +73,41 @@ export const getUserFavorites = (User) => {
             method: "GET",
             headers: {
                 "authorization": `${User.token}`,
-                "Content-Type": "applicaton/json"
+                "Content-Type": "application/json"
             }
         })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            dispatch(favoritesLoaded(data));
+        })
+        
+        .catch((error) => {
+            return {
+                type: "error",
+                value: error,
+            }
+        })
+    };
+};
+
+export const favoritesLoaded = (data) => {
+    return {
+        type: "LOADED_FAVORITES",
+        value: data,
     }
 }
 
-export const removeEntry = (index) => {
+export const addFav = (favorites) => {
     return {
-        type: 'REMOVE_ENTRY',
+        type: "ADD_FAVORITE",
+        value: favorites,
+    }
+}
+export const removeFav = (index) => {
+    return {
+        type: 'REMOVE_FAVORITE',
         value: index,
     }
 }
-
-export const logoutUser = (User) => {
-    document.cookie = "loggedIn=false; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    return {
-        type: "LOGOUT",
-        value: User, 
-    };
-};

@@ -10,8 +10,26 @@ import {
 
 
 
+
 class Dashboard extends Component {
+    state = {
+        open: false,
+        favorites: ""
+    }
+
+    // toggleDialog = () => this.setState({open: !this.state.open});
+
+    handleSubmit = (e) => {
+        const newState = {...this.state };
+        newState[e.target.id] = e.target.value;
+    this.setState(newState)    
+    };
    
+    // functions go here
+    // write get favs and delete favs Functions
+
+
+
     render() {
         return (
             <div>
