@@ -6,7 +6,7 @@ import {
   TableCell,
   TableBody,
 } from "@material-ui/core";
-import App from "../components/searchForm";
+import SearchForm from "../components/searchForm";
 
 class Dashboard extends Component {
   state = {
@@ -25,6 +25,7 @@ class Dashboard extends Component {
   // write get favs and delete favs Functions
 
   render() {
+    console.log("dashboard props", this.props.userName);
     return (
       <div>
         <div>
@@ -36,7 +37,7 @@ class Dashboard extends Component {
             </TableHead>
             <TableBody></TableBody>
           </Table>
-          <App />
+          <SearchForm />
         </div>
       </div>
     );

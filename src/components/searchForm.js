@@ -1,32 +1,20 @@
 import React, { Component } from "react";
 import { Button } from "@material-ui/core";
-// import { userLoaded } from "../redux/actions";
+
 const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config();
 const api_key = process.env.API_KEY;
 
-class App extends Component {
+class SearchForm extends Component {
   state = {
     results: [],
     input: "",
-    loggedin: false,
-  };
-
-  consol = () => {
-    console.log(this.state.results);
   };
 
   onChange = (e) => {
     this.setState({ input: e.target.value });
   };
-
-  loggedIn() {
-    if (this.props.user.userName) {
-      document.cookie = "loggedIn=true;max-age=600*1000";
-      this.setState({ loggedin: true });
-    }
-  }
 
   getGames = (e) => {
     e.preventDefault();
@@ -40,9 +28,8 @@ class App extends Component {
     });
   };
 
-  // conditionally render add favs button when logged in
   render() {
-    console.log("LOG A BITCH IN", this.props.userName);
+    console.log("searchform props", this.props.userName);
     return (
       <div>
         <form onSubmit={this.getGames}>
@@ -69,8 +56,8 @@ class App extends Component {
                     width="250"
                     height="250"
                   ></img>
-                  <h4>Game Rating:{results.rating}</h4>
-                  <h4>Date Released:{results.released}</h4>
+                  <h4>Game Rating: {results.rating}</h4>
+                  <h4>Date Released: {results.released}</h4>
                 </ul>
               </p>
             );
@@ -81,4 +68,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default SearchForm;

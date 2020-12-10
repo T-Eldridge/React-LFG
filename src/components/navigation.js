@@ -6,7 +6,7 @@ import { Button, AppBar, Toolbar } from "@material-ui/core";
 class Navigation extends Component {
   render() {
     return (
-      <AppBar style={{ background: "blue" }} position="static">
+      <AppBar className="nav-image" position="static">
         <Toolbar>
           <h1>Looking For Games</h1>
         </Toolbar>

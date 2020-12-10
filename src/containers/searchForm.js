@@ -1,15 +1,12 @@
 import { connect } from "react-redux";
-import searchForm from "../components/searchForm";
-
-// import add and remove favorites
+import SearchForm from "../components/searchForm";
 
 const mapStateToProps = (state) => {
-  console.log("muh state", state);
   return {
     userName: state.userName,
-    favorites: state.favorites,
     userPassword: state.userPassword,
+    favorites: state.favorites,
   };
 };
 
-export default connect(mapStateToProps)(searchForm);
+export default connect(mapStateToProps)(SearchForm);
