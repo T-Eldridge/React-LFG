@@ -27,12 +27,12 @@ class App extends Component {
 
   login = (e) => {
     e.preventDefault();
-    const userObject = {
-      userName: this.state.userName,
-      userPassword: this.state.userPassword,
-    };
+    // const userObject = {
+    //   userName: this.state.userName,
+    //   userPassword: this.state.userPassword,
+    // };
 
-    this.props.loginUser(userObject);
+    // this.props.loginUser(userObject);
     this.props.setUser(this.state.userName);
     console.log(
       "im a person",

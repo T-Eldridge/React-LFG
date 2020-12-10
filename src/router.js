@@ -1,37 +1,34 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router";
 import Login from "./containers/login";
 import cookie from "cookie";
-import searchForm from "./components/searchForm"
-import Dashboard from './components/dasboard';
+import searchForm from "./containers/searchForm";
+import Dashboard from "./containers/dashboard";
 
 const checkAuth = () => {
-    const cookies = cookie.parse(document.cookie);
-    return cookies["loggedIn"] ? true : false;
-}
+  const cookies = cookie.parse(document.cookie);
+  return cookies["loggedIn"] ? true : false;
+};
 
-const ProtectedRoute = ({component: Component, ...rest }) => {
-    return (
-        <Route 
-        {...rest}
-        render={(props) =>
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
         checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
-        }
-        />
-    )
-}
- 
+      }
+    />
+  );
+};
 
 const Router = () => {
-    return (
-        <Switch>
-            <ProtectedRoute path= "/dashboard" component={Dashboard}  />
-            <Route  path= "/login" component={Login} />
-            <Route path= "/search" component={searchForm} />
-            <Route exact path= "/" component={searchForm} />
-            
-        </Switch>
-    )
-}
+  return (
+    <Switch>
+      <ProtectedRoute path="/dashboard" component={Dashboard} />
+      <Route path="/login" component={Login} />
+      <Route exact path="/" component={searchForm} />
+    </Switch>
+  );
+};
 
 export default Router;

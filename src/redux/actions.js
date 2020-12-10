@@ -1,25 +1,25 @@
-export const loginUser = (User) => {
-  return function (dispatch) {
-    fetch("/auth/login", {
-      method: "POST",
-      body: JSON.stringify(User),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) =>
-        res.json().then((data) => {
-          dispatch(setUser(data));
-        })
-      )
-      .catch((error) => {
-        return {
-          type: "error",
-          value: error,
-        };
-      });
-  };
-};
+// export const loginUser = (User) => {
+//   return function (dispatch) {
+//     fetch("/auth/login", {
+//       method: "POST",
+//       body: JSON.stringify(User),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     })
+//       .then((res) =>
+//         res.json().then((data) => {
+//           dispatch(setUser(data));
+//         })
+//       )
+//       .catch((error) => {
+//         return {
+//           type: "error",
+//           value: error,
+//         };
+//       });
+//   };
+// };
 
 export const addUser = (User) => {
   return function (dispatch) {

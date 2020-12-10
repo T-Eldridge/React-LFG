@@ -1,12 +1,13 @@
-import { connect } from 'react-redux'
-import Dashboard from '../components/dasboard'
-import { getUserFavorites } from "../redux/actions"
-// import add and remove favorites 
+import { connect } from "react-redux";
+import Dashboard from "../components/dasboard";
+import { getUserFavorites } from "../redux/actions";
+// import add and remove favorites
 
 const mapStateToProps = (state) => {
-    return {
-        favorites: state.favorites
-    }
-}
+  return {
+    userName: state.userName,
+    favorites: state.favorites,
+  };
+};
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(Dashboard);

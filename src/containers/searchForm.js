@@ -4,9 +4,10 @@ import searchForm from "../components/searchForm";
 // import add and remove favorites
 
 const mapStateToProps = (state) => {
+  console.log("muh state", state);
   return {
-    favorites: state.favorites,
     userName: state.userName,
+    favorites: state.favorites,
     userPassword: state.userPassword,
   };
 };
