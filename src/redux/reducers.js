@@ -33,4 +33,18 @@ const favorites = (state = [], action) => {
   }
 };
 
-export default combineReducers({ userName, userPassword, favorites });
+const favGameObj = (state = {}, action) => {
+  switch (action.type) {
+    case "SET_FAV":
+      return Object.assign({}, state, action.value);
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  favGameObj,
+  userName,
+  userPassword,
+  favorites,
+});

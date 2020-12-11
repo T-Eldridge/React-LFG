@@ -87,9 +87,6 @@ export const getUserFavorites = (User) => {
       .then((res) => {
         return res.json();
       })
-      .then((data) => {
-        dispatch(favoritesLoaded(data));
-      })
 
       .catch((error) => {
         return {
@@ -100,10 +97,17 @@ export const getUserFavorites = (User) => {
   };
 };
 
-export const favoritesLoaded = (data) => {
+export const storeToken = (input) => {
   return {
-    type: "LOADED_FAVORITES",
-    value: data,
+    type: "BEARER_TOKEN",
+    value: input,
+  };
+};
+
+export const setFavGameObj = (fav) => {
+  return {
+    type: "SET_FAV",
+    value: fav,
   };
 };
 
@@ -113,9 +117,17 @@ export const addFav = (favorites) => {
     value: favorites,
   };
 };
-export const removeFav = (index) => {
+
+export const removeFav = (id) => {
   return {
     type: "REMOVE_FAVORITE",
-    value: index,
+    value: id,
+  };
+};
+
+export const addFavorites = (arr) => {
+  return {
+    type: "ADD_FAVORITES",
+    value: arr,
   };
 };

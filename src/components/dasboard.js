@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  Button,
   Table,
   TableHead,
   TableRow,
@@ -37,7 +38,13 @@ class Dashboard extends Component {
             </TableHead>
             <TableBody></TableBody>
           </Table>
-          <SearchForm />
+          <SearchForm
+            userName={this.props.userName}
+            setFavGameObj={this.props.setFavGameObj}
+            favorites={this.props.favorites}
+            addFav={this.props.addFav}
+            favGameObj={this.props.favGameObj}
+          />
         </div>
       </div>
     );

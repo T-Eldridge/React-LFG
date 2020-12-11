@@ -1,41 +1,38 @@
-const mysql = require('mysql')
-const pool = require('../sql/connection')
-const { handleSQLError } = require('../sql/error')
+const mysql = require("mysql");
+const pool = require("../sql/connection");
+const { handleSQLError } = require("../sql/error");
 
 const getFavs = (req, res) => {
-  let sql = "SELECT * FROM lfgusers.favorites WHERE id = ?"
-  sql = mysql.format(sql, [ req.params.id ])
-
-  pool.query(sql, (err, rows) => {
-    if (err) return handleSQLError(res, err)
+  pool.query("SELECT * FROM lfgusers.favorites", (err, rows) => {
+    if (err) return handleSQLError(res, err);
     return res.json(rows);
-  })
-}
+  });
+};
 
 const addFav = (req, res) => {
-  const { userName, userPassword } = req.body
-  let sql = "INSERT INTO lfgusers.favorites (userName) VALUES (?)"
-  sql = mysql.format(sql, [ userName, userPassword ])
+  const { username, gameID, gameName } = req.body;
+  let sql =
+    "INSERT INTO lfgusers.favorites (username, gameID, gameName) VALUES (?, ? , ?)";
+  sql = mysql.format(sql, [username, gameID, gameName]);
 
   pool.query(sql, (err, results) => {
-    if (err) return handleSQLError(res, err)
-    return res.json({ newId: results.insertId });
-  })
-}
+    if (err) return handleSQLError(res, err);
+    return res.json({ message: `user ${username} favorite added` });
+  });
+};
 
 const deleteFav = (req, res) => {
-  let sql = "DELETE FROM lfgusers.favorites WHERE userName = ?"
-  sql = mysql.format(sql, [ req.params.first_name ])
+  let sql = "DELETE FROM lfgusers.favorites WHERE gameId = ?";
+  sql = mysql.format(sql, [req.params.id]);
 
   pool.query(sql, (err, results) => {
-    if (err) return handleSQLError(res, err)
+    if (err) return handleSQLError(res, err);
     return res.json({ message: `Deleted ${results.affectedRows} user(s)` });
-  })
-}
-
+  });
+};
 
 module.exports = {
   getFavs,
   addFav,
-  deleteFav
-}
+  deleteFav,
+};
