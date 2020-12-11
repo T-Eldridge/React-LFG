@@ -3,10 +3,13 @@ const pool = require("../sql/connection");
 const { handleSQLError } = require("../sql/error");
 
 const getFavs = (req, res) => {
-  pool.query("SELECT * FROM lfgusers.favorites", (err, rows) => {
-    if (err) return handleSQLError(res, err);
-    return res.json(rows);
-  });
+  pool.query(
+    "SELECT * FROM lfgusers.favorites WHERE username = '?'",
+    (err, rows) => {
+      if (err) return handleSQLError(res, err);
+      return res.json(rows);
+    }
+  );
 };
 
 const addFav = (req, res) => {

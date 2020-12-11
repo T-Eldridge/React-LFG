@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import SearchForm from "../components/searchForm";
 
+const axios = require("axios");
 class Dashboard extends Component {
   state = {
     favorites: "",
@@ -22,6 +23,16 @@ class Dashboard extends Component {
     this.setState(newState);
   };
 
+  getFavs = () => {
+    axios(
+      `http://localhost:4001/favorites&username=` + this.props.userName
+    ).then((res) => {
+      const favorites = res.data.favorites;
+      this.setState({ favorites: [...favorites] });
+      console.log(favorites);
+    });
+  };
+
   // functions go here
   // write get favs and delete favs Functions
 
@@ -33,6 +44,13 @@ class Dashboard extends Component {
           <Table>
             <TableHead>
               <TableRow align="left">
+                <Button
+                  onClick={this.getFavs}
+                  variant="contained"
+                  color="secondary"
+                >
+                  My Favorites
+                </Button>
                 <TableCell> {this.props.userName}'s Favorite Games: </TableCell>
               </TableRow>
             </TableHead>
