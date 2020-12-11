@@ -12,7 +12,7 @@ import SearchForm from "../components/searchForm";
 const axios = require("axios");
 class Dashboard extends Component {
   state = {
-    favorites: "",
+    favorites: [],
   };
 
   // toggleDialog = () => this.setState({open: !this.state.open});
@@ -25,11 +25,11 @@ class Dashboard extends Component {
 
   getFavs = () => {
     axios(
-      `http://localhost:4001/favorites&username=` + this.props.userName
+      `http://localhost:4001/favorites?username=` + this.props.userName
     ).then((res) => {
       const favorites = res.data.favorites;
       this.setState({ favorites: [...favorites] });
-      console.log(favorites);
+      console.log("these are favs", this.state.favorites);
     });
   };
 
@@ -44,18 +44,14 @@ class Dashboard extends Component {
           <Table>
             <TableHead>
               <TableRow align="left">
-                <Button
-                  onClick={this.getFavs}
-                  variant="contained"
-                  color="secondary"
-                >
-                  My Favorites
-                </Button>
                 <TableCell> {this.props.userName}'s Favorite Games: </TableCell>
               </TableRow>
             </TableHead>
             <TableBody></TableBody>
           </Table>
+          <Button onClick={this.getFavs} variant="contained" color="secondary">
+            My Favorites
+          </Button>
           <SearchForm
             userName={this.props.userName}
             setFavGameObj={this.props.setFavGameObj}
