@@ -12,15 +12,25 @@ class Navigation extends Component {
         </Toolbar>
         <div align="center">
           <a href="/">
-            <Button>Home</Button>
+            <Button variant="contained" color="secondary">
+              Home
+            </Button>
           </a>
           {this.props.userName ? (
             <a href="/">
-              <Button onClick={() => this.props.setUser("")}>Logout</Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => this.props.setUser("")}
+              >
+                Logout
+              </Button>
             </a>
           ) : (
             <a href="/login">
-              <Button>Login</Button>
+              <Button variant="contained" color="secondary">
+                Login
+              </Button>
             </a>
           )}
         </div>
