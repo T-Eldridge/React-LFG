@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.b0af9f99.chunk.css",
-    "main.js": "/static/js/main.33a10be1.chunk.js",
-    "main.js.map": "/static/js/main.33a10be1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5cf22717.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5cf22717.js.map",
-    "static/js/2.da559de2.chunk.js": "/static/js/2.da559de2.chunk.js",
-    "static/js/2.da559de2.chunk.js.map": "/static/js/2.da559de2.chunk.js.map",
-    "static/js/3.6df20dcc.chunk.js": "/static/js/3.6df20dcc.chunk.js",
-    "static/js/3.6df20dcc.chunk.js.map": "/static/js/3.6df20dcc.chunk.js.map",
+    "main.js": "/static/js/main.cba99bab.chunk.js",
+    "main.js.map": "/static/js/main.cba99bab.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0130e196.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0130e196.js.map",
+    "static/js/2.3b4a67d5.chunk.js": "/static/js/2.3b4a67d5.chunk.js",
+    "static/js/2.3b4a67d5.chunk.js.map": "/static/js/2.3b4a67d5.chunk.js.map",
+    "static/js/3.764d87cc.chunk.js": "/static/js/3.764d87cc.chunk.js",
+    "static/js/3.764d87cc.chunk.js.map": "/static/js/3.764d87cc.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.b0af9f99.chunk.css.map": "/static/css/main.b0af9f99.chunk.css.map",
-    "static/js/2.da559de2.chunk.js.LICENSE.txt": "/static/js/2.da559de2.chunk.js.LICENSE.txt",
+    "static/js/2.3b4a67d5.chunk.js.LICENSE.txt": "/static/js/2.3b4a67d5.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/video-games-concept-gamepad-controls-260nw-1792571971.5224706c.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.5cf22717.js",
-    "static/js/2.da559de2.chunk.js",
+    "static/js/runtime-main.0130e196.js",
+    "static/js/2.3b4a67d5.chunk.js",
     "static/css/main.b0af9f99.chunk.css",
-    "static/js/main.33a10be1.chunk.js"
+    "static/js/main.cba99bab.chunk.js"
   ]
 }

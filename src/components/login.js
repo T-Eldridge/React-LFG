@@ -142,8 +142,13 @@ class App extends Component {
                     required
                   />
                   <br />
-                  <Button variant="contained" color="secondary" type="submit">
-                    <Link to="/dashboard">Submit!</Link>
+                  <Button
+                    onClick={this.login}
+                    variant="contained"
+                    color="secondary"
+                    type="submit"
+                  >
+                    Submit!
                   </Button>
                 </form>
               </DialogContent>
