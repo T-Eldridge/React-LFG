@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router";
 import Login from "./containers/login";
 import cookie from "cookie";
-import searchForm from "./containers/searchForm";
+import SearchForm from "./containers/searchForm";
 import Dashboard from "./containers/dashboard";
 
 const checkAuth = () => {
@@ -26,7 +26,7 @@ const Router = () => {
     <Switch>
       <ProtectedRoute path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
-      <Route exact path="/" component={Dashboard} />
+      <Route path="/searchform" component={SearchForm} />
     </Switch>
   );
 };

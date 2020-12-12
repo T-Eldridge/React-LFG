@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 import store from "./redux/store";
 import Navigation from "./containers/navigation";
+// import Dashboard from "./containers/dashboard";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <div className="container">
           <BrowserRouter>
             <Navigation />
+            {/* <Dashboard /> */}
             <Router />
           </BrowserRouter>
         </div>

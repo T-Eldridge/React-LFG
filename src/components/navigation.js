@@ -12,7 +12,7 @@ class Navigation extends Component {
         </Toolbar>
         <div align="center">
           <Button variant="contained" color="secondary">
-            <Link to="/">Home</Link>
+            <Link to="/searchform">Home</Link>
           </Button>
 
           {this.props.userName ? (
@@ -22,7 +22,7 @@ class Navigation extends Component {
               onClick={() => this.props.setUser("")}
             >
               {" "}
-              <Link to="/">Logout</Link>
+              <Link to="/searchform">Logout</Link>
             </Button>
           ) : (
             <Button variant="contained" color="secondary">

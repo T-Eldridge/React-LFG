@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Navigation from "../components/navigation";
-
+import { setUser } from "../redux/actions";
 // import add and remove favorites
 
 const mapStateToProps = (state) => {
@@ -11,4 +11,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Navigation);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUser: (user) => dispatch(setUser(user)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
