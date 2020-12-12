@@ -24,13 +24,17 @@ class Dashboard extends Component {
   };
 
   getFavs = () => {
-    axios(
-      `http://localhost:4001/favorites?username=` + this.props.userName
-    ).then((res) => {
-      const favorites = res.data.favorites;
-      this.setState({ favorites: [...favorites] });
-      console.log("these are favs", this.state.favorites);
-    });
+    axios(`http://localhost:4001/favorites/${this.props.userName}`).then(
+      (res) => {
+        const favorites = res.data;
+        this.setState({ favorites });
+        console.log("res", res);
+        console.log("res.data", res.data);
+        console.log("res.data.results", res.data.results);
+        console.log("these are favs", favorites);
+        console.log("fav state", this.state.favorites);
+      }
+    );
   };
 
   // functions go here
@@ -43,11 +47,18 @@ class Dashboard extends Component {
         <div>
           <Table>
             <TableHead>
-              <TableRow align="left">
-                <TableCell> {this.props.userName}'s Favorite Games: </TableCell>
+              <TableRow>
+                <TableCell align="center" size="small" variant="head">
+                  {" "}
+                  <h2>{this.props.userName}'s Favorite Games: </h2>
+                </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody></TableBody>
+            <TableBody>
+              {this.state.favorites.map((favorites) => {
+                return <h2>{favorites.gameName}</h2>;
+              })}
+            </TableBody>
           </Table>
           <Button onClick={this.getFavs} variant="contained" color="secondary">
             My Favorites

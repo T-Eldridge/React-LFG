@@ -3,7 +3,7 @@ const favoritesController = require("../controllers/favorites");
 // const { authenticate } = require("../middleware");
 const router = express.Router();
 
-router.get("/", favoritesController.getFavs);
+router.get("/:id", favoritesController.getFavs);
 
 router.post("/", favoritesController.addFav);
 
