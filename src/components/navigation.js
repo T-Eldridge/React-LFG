@@ -22,7 +22,7 @@ class Navigation extends Component {
               onClick={() => this.props.setUser("")}
             >
               {" "}
-              <Link to="/searchform">Logout</Link>
+              <Link to="/">Logout</Link>
             </Button>
           ) : (
             <Button variant="contained" color="secondary">
