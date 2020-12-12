@@ -7,6 +7,7 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
+  Link,
 } from "@material-ui/core";
 
 class App extends Component {
@@ -142,7 +143,7 @@ class App extends Component {
                   />
                   <br />
                   <Button variant="contained" color="secondary" type="submit">
-                    Submit!
+                    <Link to="/dashboard">Submit!</Link>
                   </Button>
                 </form>
               </DialogContent>

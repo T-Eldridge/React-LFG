@@ -27,6 +27,7 @@ const Router = () => {
       <ProtectedRoute path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
       <Route path="/searchform" component={SearchForm} />
+      <Route path="/" component={SearchForm} />
     </Switch>
   );
 };
