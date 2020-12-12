@@ -26,7 +26,7 @@ class Navigation extends Component {
             </Button>
           ) : (
             <Button variant="contained" color="secondary">
-              <Link to="/">Login</Link>
+              <Link to="/login">Login</Link>
             </Button>
           )}
         </div>
