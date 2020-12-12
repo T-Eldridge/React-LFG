@@ -24,17 +24,15 @@ class Dashboard extends Component {
   };
 
   getFavs = () => {
-    axios(`http://localhost:4001/favorites/${this.props.userName}`).then(
-      (res) => {
-        const favorites = res.data;
-        this.setState({ favorites });
-        console.log("res", res);
-        console.log("res.data", res.data);
-        console.log("res.data.results", res.data.results);
-        console.log("these are favs", favorites);
-        console.log("fav state", this.state.favorites);
-      }
-    );
+    axios(`/favorites/${this.props.userName}`).then((res) => {
+      const favorites = res.data;
+      this.setState({ favorites });
+      console.log("res", res);
+      console.log("res.data", res.data);
+      console.log("res.data.results", res.data.results);
+      console.log("these are favs", favorites);
+      console.log("fav state", this.state.favorites);
+    });
   };
 
   // functions go here

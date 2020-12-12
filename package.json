@@ -37,7 +37,7 @@
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "start": "concurrently \"npm run server\" \"react-scripts start\"",
-    "server": "nodemon server/index.js",
+    "server": "node server/index.js",
     "start-dev": "concurrently \"npm run server\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",

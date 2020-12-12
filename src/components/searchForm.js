@@ -37,7 +37,7 @@ class SearchForm extends Component {
     fav.gameID = game.id;
     fav.gameName = game.name;
     this.props.setFavGameObj(fav);
-    axios.post("http://localhost:4001/favorites", fav);
+    axios.post("/favorites", fav);
     !existingFav && this.props.addFav(fav);
   };
 
