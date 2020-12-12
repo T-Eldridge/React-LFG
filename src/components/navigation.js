@@ -11,27 +11,23 @@ class Navigation extends Component {
           <h1>Looking For Games</h1>
         </Toolbar>
         <div align="center">
-          <a href="/">
-            <Button variant="contained" color="secondary">
-              Home
-            </Button>
-          </a>
+          <Button variant="contained" color="secondary">
+            <Link to="/">Home</Link>
+          </Button>
+
           {this.props.userName ? (
-            <a href="/">
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => this.props.setUser("")}
-              >
-                Logout
-              </Button>
-            </a>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => this.props.setUser("")}
+            >
+              {" "}
+              <Link to="/">Logout</Link>
+            </Button>
           ) : (
-            <a href="/login">
-              <Button variant="contained" color="secondary">
-                Login
-              </Button>
-            </a>
+            <Button variant="contained" color="secondary">
+              <Link to="/">Login</Link>
+            </Button>
           )}
         </div>
       </AppBar>
